@@ -16,6 +16,8 @@ const Popup = ({onPopup, isActive}) => {
 	const onLogin = (e) => {
         e.preventDefault()
 
+		//проверка правильности веденных данных(условие ищет в "базе" введенный логин и пароль. Если существует введенный логин
+		//вместе с веденным паролем, пользователь успешно входит в систему)
         if (!!user.find(el => el.login === userLogin && el.password === password)){
 
 			let newLogin = user.find(el => el.login === userLogin);
@@ -38,6 +40,7 @@ const Popup = ({onPopup, isActive}) => {
 		setCorrect(true);
 	}
 
+	//надпись, уведомляющая пользователя о некорректности введенных данных
 	let loginError = isCorrect ? null : <p className='popup__error'>Логин или пароль неверный</p>
 	let popupClass = isActive ? 'popup' : 'popup popup__hidden'
 	return(

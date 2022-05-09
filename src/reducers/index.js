@@ -1,3 +1,4 @@
+//имитация "базы"
 const initialState = {
     filter: '',
     activeUser: {login: 'Гость', rights: 'guest'},
@@ -86,6 +87,7 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 filter: action.payload,
+                //filteredNews является основным источником данных для новостей
                 filteredNews: action.payload.split(' ').join('').length === 0 ? state.news : state.news.filter(el=> el.metaTitle.indexOf(action.payload.toLowerCase()) > -1)
             }
         

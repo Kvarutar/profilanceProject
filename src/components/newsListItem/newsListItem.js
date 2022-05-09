@@ -11,7 +11,7 @@ const NewsListItem = ({onDeleteNews, title, text, date, id}) => {
 
     let btns;
 
-
+    //условие добавляет к карточкам новостей кнопки, если пользователь администратор
     if (activeUser.rights === 'admin' && !news.filter(el => el.id === id)[0].approve){
         btns = <div className='news-item__btns'>
             <button className="news-item__delete btn" onClick = {onDeleteNews}>Удалить</button>

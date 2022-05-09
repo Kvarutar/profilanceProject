@@ -11,6 +11,8 @@ const Header = ({onPopup}) => {
 
     const onLogout = () => {
         dispatch(logout())
+
+        //перенаправление только что вошедшего пользователя на главную страницу
         navigate('/');
     }
 

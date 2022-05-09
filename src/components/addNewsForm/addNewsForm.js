@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom'
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {v4 as uuid4} from 'uuid';
 import {addNews} from '../../actions'
@@ -22,7 +22,8 @@ const AddNewsForm = ({isAdd, onAddNews}) => {
                 month: 'long',
                 day: 'numeric'
               });
-
+            
+            //создание нового объекта новости
             let newArticle = {
                 id: uuid4(),
                 title: newTitle,
@@ -32,18 +33,22 @@ const AddNewsForm = ({isAdd, onAddNews}) => {
                 approve: false
             }
 
+            //добавление новости в state
             dispatch(addNews(newArticle));
 
+            //обнуление при успешной отправке
             setTitle('');
             setText('');
             setGuest(false);
         }else{
+            //обнуление в случае попытки отправки новости, невешедшем пользователем
             setTitle('');
             setText('');
             setGuest(true);
         }
     }
 
+    //обнуление при закрытии формы добавления новости
     const onClose = () => {
         setTitle('');
         setText('');

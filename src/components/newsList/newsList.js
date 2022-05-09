@@ -34,11 +34,11 @@ const NewsList = () => {
         })
     }
 
+    //если вошедший пользователь обладает правами администратора, ему покажутся все новости. Иначе, покажутся новости
+    //прошедшие одобрение администратором
     let rightsNews = activeUser.rights === 'admin' ? filteredNews : filteredNews.filter(el => el.approve === true)
 
     let content = renderNewsItems(rightsNews)
-    /* let addClass = isAdd ? ; */
-    /* let content = isAdd ? <AddNewsForm/> : renderNewsItems(rightsNews); */
     return(
         <div className="news">
             <div className="container">

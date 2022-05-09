@@ -1,0 +1,74 @@
+.add
+    position: absolute
+    width: 100vw
+    height: 100vh
+    background-color: rgba(0,0,0,0.7)
+    top: 0
+    left: 0
+    z-index: 99999
+    visibility: visible
+    opacity: 1
+    transition: 0.3s all
+    &_hidden
+        visibility: hidden
+        opacity: 0
+        transition: 0.3s all
+    &__title
+        font-style: normal
+        font-weight: 700
+        font-size: 24px
+        padding-bottom: 39px
+    &__form
+        position: absolute
+        background: #FFFFFF
+        border-radius: 8px
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        width: 60vw
+        height: 60vh
+        padding-top: 90px
+        padding-left: 60px
+        padding-right: 60px
+        padding-bottom: 74px
+        display: flex
+        flex-direction: column
+        &--input
+            display: block
+            width: -webkit-fill-available
+            width: -moz-available
+            padding: 10px 24px
+            font-style: normal
+            font-weight: 400
+            font-size: 16px
+            text-decoration: none
+            border: 1px solid #BBB8B8
+            border-radius: 8px
+            &_textarea
+                height: 100px
+        div
+            margin-bottom: 20px
+        &--label
+            font-size: 18px
+            display: block
+            margin-bottom: 10px
+    &__close
+        width: 15px
+        height: 15px
+        cursor: pointer
+        display: block
+        position: absolute
+        right: 25px
+        top: 25px
+        img
+            width: 100%
+            height: 100%
+    &__error
+        font-style: normal
+        font-weight: 400
+        font-size: 16px
+        margin-bottom: 20px
+        text-align: center
+        color: red
+            
+            
